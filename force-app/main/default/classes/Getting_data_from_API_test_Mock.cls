@@ -1,7 +1,7 @@
 @istest
 public class Getting_data_from_API_test_Mock implements HttpCalloutMock  
 {
-    // Implement this interface method
+    // Implement this interface method interst
     public HttpResponse respond(HttpRequest Request)
     {
         // Create a fake response
