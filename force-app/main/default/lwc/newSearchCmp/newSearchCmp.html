@@ -1,0 +1,98 @@
+<template>
+    <lightning-card title="Search With ID">
+        <lightning-layout   multiple-rows="true">
+            <lightning-layout-item  flexibility="auto" padding="around-small" size="9">
+                <lightning-input type="search" placeholder="please enter ID here" onkeyup={handleClick}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item  flexibility="auto" padding="around-small" size="3">
+              <lightning-button variant="brand" onclick={handlebtnClick} label="Search" ></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout> 
+   </lightning-card>
+   <template if:true={showsearch} title="Search Results">
+    <lightning-datatable
+    key-field="id"
+    data={data}
+    columns={columns}
+    hide-checkbox-column="true"
+    show-row-number-column="true"
+    onrowaction={showdetailsbtn}>
+    
+</lightning-datatable>   
+   </template>
+   <template if:true={showdetails}>
+    <lightning-card title="Customer details" i
+    
+    
+    >
+        <lightning-layout horizontal-align="spread">
+            <lightning-layout-item padding="around-small">
+              <lightning-input type="text" label="Member_Id" value={objdata.Member_Id} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Name" value={objdata.Name} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Gender" value={objdata.Gender} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="PAN_Card" value={objdata.PAN_Card} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Marital_Status" value={objdata.Marital_Status} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+             </lightning-layout>
+             <lightning-layout horizontal-align="spread">
+            <lightning-layout-item padding="around-small">
+              <lightning-input type="text" label="DoB" value={objdata.DoB} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Height" value={objdata.Height} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Weight" value={objdata.Weight} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Physically_Handicapped" value={objdata.Physically_Handicapped} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Phone" value={objdata.Phone} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+             </lightning-layout>
+             <lightning-layout horizontal-align="spread">
+            <lightning-layout-item padding="around-small">
+              <lightning-input type="text" label="Mobile" value={objdata.Mobile} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Fax" value={objdata.Fax} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Email" value={objdata.Email} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Mailing_Street" value={objdata.Mailing_Street} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Mailing_City" value={objdata.Mailing_City} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+             </lightning-layout>
+          
+             <lightning-layout horizontal-align="spread">
+            <lightning-layout-item padding="around-small">
+              <lightning-input  type="text" label="Mailing_State" value={objdata.Mailing_State} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Mailing_Zip_Postal_Code" value={objdata.Mailing_Zip_Postal_Code} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Mailing_Country" value={objdata.Mailing_Country} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                 <lightning-input type="text" label="Additional_Information" value={objdata.Additional_Information} variant="label-stacked" disabled></lightning-input>
+            </lightning-layout-item>
+            
+             </lightning-layout>
+      </lightning-card>
+   </template>
+    
+</template>
